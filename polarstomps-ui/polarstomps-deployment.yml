@@ -13,7 +13,6 @@ spec:
       labels:
         app: polarstomps
     spec:
-      serviceAccountName: polarstomps
       volumes:
       containers:
         - image: howdoicomputer/polarstomps:v2
