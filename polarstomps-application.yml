@@ -13,4 +13,5 @@ spec:
     namespace: polarstomps
   syncPolicy:
     syncOptions:
+      - PruneLast=true
       - CreateNamespace=true
