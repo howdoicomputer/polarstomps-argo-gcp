@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: polarstomps
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: polarstomps
+  template:
+    metadata:
+      labels:
+        app: polarstomps
+    spec:
+      serviceAccountName: polarstomps
+      volumes:
+      containers:
+        - image: howdoicomputer/polarstomps:v2
+          imagePullPolicy: IfNotPresent
+          name: polarstomps
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources:
+            requests:
+              cpu: "0.5"

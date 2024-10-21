@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: polarstomps
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/howdoicomputer/polarstomps-argo-gcp
+    targetRevision: main
+    path: polarstomps-ui
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: polarstomps
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

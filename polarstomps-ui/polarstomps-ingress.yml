@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: polarstomps-ingress
+  namespace: polarstomps
+spec:
+  defaultBackend:
+    service:
+      name: polarstomps
+      port:
+        name: 8080
