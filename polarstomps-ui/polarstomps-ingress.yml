@@ -3,6 +3,9 @@ kind: Ingress
 metadata:
   name: polarstomps-ingress
   namespace: polarstomps
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: polarstomps
+    networking.gke.io/managed-certificates: polarstomps-cert
 spec:
   defaultBackend:
     service:
