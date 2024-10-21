@@ -6,6 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: polarstomps
     networking.gke.io/managed-certificates: polarstomps-cert
+    kubernetes.io/ingress.class: "gce"
 spec:
   defaultBackend:
     service:
