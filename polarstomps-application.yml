@@ -2,7 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: polarstomps
-  namespace: polarstomps
 spec:
   project: default
   source:
@@ -14,5 +13,4 @@ spec:
     namespace: polarstomps
   syncPolicy:
     syncOptions:
-      - PruneLast=true
       - CreateNamespace=true
