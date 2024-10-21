@@ -8,4 +8,4 @@ spec:
     service:
       name: polarstomps
       port:
-        name: 8080
+        number: 8080
