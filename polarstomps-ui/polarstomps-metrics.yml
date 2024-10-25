@@ -7,5 +7,5 @@ spec:
     matchLabels:
       app.kubernetes.io/name: polarstomps
   endpoints:
-  - port: metrics
+  - port: polarstomps
     interval: 30s
