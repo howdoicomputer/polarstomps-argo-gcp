@@ -2,19 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: polarstomps
-  app.kubernetes.io/name: polarstomps
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: polarstomps
-      app.kubernetes.io/name: polarstomps
   template:
     metadata:
       labels:
         app: polarstomps
-        app.kubernetes.io/name: polarstomps
     spec:
       volumes:
       containers:
