@@ -15,7 +15,7 @@ spec:
     spec:
       volumes:
       containers:
-        - image: howdoicomputer/polarstomps:v7
+        - image: howdoicomputer/polarstomps:v8
           imagePullPolicy: IfNotPresent
           name: polarstomps
           ports:
