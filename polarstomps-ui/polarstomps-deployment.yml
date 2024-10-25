@@ -15,12 +15,16 @@ spec:
     spec:
       volumes:
       containers:
-        - image: howdoicomputer/polarstomps:v9
+        - image: howdoicomputer/polarstomps:v10
           imagePullPolicy: IfNotPresent
           name: polarstomps
           ports:
             - name: polarstomps
               containerPort: 8080
+              protocol: TCP
+          ports:
+            - name: health-and-metrics
+              containerPort: 9090
               protocol: TCP
           resources:
             requests:

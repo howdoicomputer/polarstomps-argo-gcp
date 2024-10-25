@@ -7,5 +7,5 @@ spec:
     matchLabels:
       app: polarstomps
   endpoints:
-  - port: polarstomps
+  - port: metrics
     interval: 30s
