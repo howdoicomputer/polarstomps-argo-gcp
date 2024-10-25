@@ -23,7 +23,7 @@ spec:
               containerPort: 8080
               protocol: TCP
           ports:
-            - name: health-and-metrics
+            - name: monitoring
               containerPort: 9090
               protocol: TCP
           resources:
