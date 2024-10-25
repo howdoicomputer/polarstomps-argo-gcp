@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: polarstomp
+      app.kubernetes.io/name: polarstomps
   endpoints:
   - port: metrics
     interval: 30s
