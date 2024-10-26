@@ -16,7 +16,7 @@ spec:
       volumes:
       containers:
         - name: polarstomps
-          image: howdoicomputer/polarstomps:v12
+          image: howdoicomputer/polarstomps:v13
           imagePullPolicy: IfNotPresent
           env:
             - name: REDIS_AUTH
