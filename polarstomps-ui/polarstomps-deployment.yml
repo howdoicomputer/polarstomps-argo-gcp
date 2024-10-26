@@ -28,12 +28,12 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: "redis"
-                  key: redis-host
+                  key: redis_host
             - name: REDIS_PORT
               valueFrom:
                 configMapKeyRef:
                   name: "redis"
-                  key: redis-port
+                  key: redis_port
           ports:
             - name: polarstomps
               containerPort: 8080
