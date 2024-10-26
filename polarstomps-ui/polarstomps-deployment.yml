@@ -18,6 +18,22 @@ spec:
         - image: howdoicomputer/polarstomps:v10
           imagePullPolicy: IfNotPresent
           name: polarstomps
+          env:
+            - name: REDIS_AUTH
+              valueFrom:
+                secretKeyRef:
+                  name: redis-auth
+                  key: auth
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: "redis"
+                  key: redis-host
+            - name: REDIS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: "redis"
+                  key: redis-port
           ports:
             - name: polarstomps
               containerPort: 8080

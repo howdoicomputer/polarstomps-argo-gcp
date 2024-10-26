@@ -14,4 +14,4 @@ spec:
   syncPolicy:
     syncOptions:
       - PruneLast=true
-      - CreateNamespace=true
+      - CreateNamespace=false
