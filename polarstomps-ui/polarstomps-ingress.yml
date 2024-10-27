@@ -4,8 +4,8 @@ metadata:
   name: polarstomps-ingress
   namespace: polarstomps
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: infra-dev-polarstomps-addr
-    networking.gke.io/managed-certificates: polarstomps-cert
+    kubernetes.io/ingress.global-static-ip-name: infra-prod-polarstomps-addr
+    networking.gke.io/managed-certificates: infra-prod-polarstomps-cert
     kubernetes.io/ingress.class: "gce"
 spec:
   defaultBackend:

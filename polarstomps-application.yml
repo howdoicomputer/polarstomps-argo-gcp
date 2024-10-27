@@ -6,7 +6,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/howdoicomputer/polarstomps-argo-gcp
-    targetRevision: main
+    targetRevision: prod
     path: polarstomps-ui
   destination:
     server: https://kubernetes.default.svc
