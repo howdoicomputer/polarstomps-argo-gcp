@@ -6,7 +6,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/howdoicomputer/polarstomps-argo-gcp
-    targetRevision: main
+    targetRevision: dev
     path: polarstomps-ui
   destination:
     server: https://kubernetes.default.svc
@@ -14,4 +14,6 @@ spec:
   syncPolicy:
     syncOptions:
       - PruneLast=true
+      # The polarstomps namespace is pre-provisioned by Terraform
+      #
       - CreateNamespace=false

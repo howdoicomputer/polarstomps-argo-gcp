@@ -14,6 +14,9 @@ spec:
         app: polarstomps
     spec:
       nodeSelector:
+        # The node compute class of Scale-Out is recommended for
+        # web application workloads.
+        #
         cloud.google.com/compute-class: "Scale-Out"
       containers:
         - name: polarstomps
