@@ -13,7 +13,8 @@ spec:
       labels:
         app: polarstomps
     spec:
-      volumes:
+      nodeSelectors:
+        cloud.google.com/compute-class: "Scale-Out"
       containers:
         - name: polarstomps
           image: howdoicomputer/polarstomps:v18
