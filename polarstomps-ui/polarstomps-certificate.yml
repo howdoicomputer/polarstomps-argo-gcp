@@ -1,7 +1,7 @@
 apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
 metadata:
-  name: polarstomps-cert
+  name: infra-prod-polarstomps-cert
 spec:
   domains:
     - a-bridge.app
