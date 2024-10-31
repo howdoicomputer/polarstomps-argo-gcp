@@ -3,6 +3,12 @@ kind: BackendConfig
 metadata:
   name: polarstomps
 spec:
+  # The healthcheck that Polarstomps offers up doesn't do much.
+  #
+  # All it does is return 200 for /healthz. However, this could
+  # be expanded later to do something fancy like ping out external
+  # dependencies.
+  #
   healthCheck:
     checkIntervalSec: 15
     port: 9090

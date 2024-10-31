@@ -4,6 +4,11 @@ metadata:
   name: polarstomps
   namespace: polarstomps
   annotations:
+    # This annotation allows for GCP to associate a generated
+    # BackendConfig with the generated classic load balancer.
+    #
+    # The BackendConfig itself is specified in healthcheck.yml
+    #
     beta.cloud.google.com/backend-config: '{"default": "polarstomps"}'
 spec:
   type: NodePort

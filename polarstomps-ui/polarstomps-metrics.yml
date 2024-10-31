@@ -6,6 +6,9 @@ spec:
   selector:
     matchLabels:
       app: polarstomps
+  # This makes it so that a Prometheus configuration is generated to scrape
+  # the metrics endpoint.
+  #
   endpoints:
   - port: metrics
     interval: 30s

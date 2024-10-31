@@ -4,8 +4,22 @@ metadata:
   name: polarstomps-ingress
   namespace: polarstomps
   annotations:
+    # The global static IP address is managed by Terraform.
+    #
+    # We're just providing its name here.
+    #
     kubernetes.io/ingress.global-static-ip-name: infra-prod-polarstomps-addr
+    # The cloud manager controller will provision a GCP managed
+    # certificate for us. The cert generation can take around 30 minutes as
+    # it's signed by the certificate authority.
+    #
     networking.gke.io/managed-certificates: infra-prod-polarstomps-cert
+    # The ingress class here would, by default, be gce but I wanted to
+    # explicitly list it to show what we're doing.
+    #
+    # It is the annotation that deploys a classic load balancer for the
+    # application.
+    #
     kubernetes.io/ingress.class: "gce"
 spec:
   defaultBackend:
