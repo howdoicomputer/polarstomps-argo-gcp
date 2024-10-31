@@ -17,7 +17,7 @@ spec:
         cloud.google.com/compute-class: "Scale-Out"
       containers:
         - name: polarstomps
-          image: howdoicomputer/polarstomps:v18
+          image: howdoicomputer/polarstomps:v19
           imagePullPolicy: IfNotPresent
           env:
             - name: REDIS_AUTH
@@ -35,6 +35,8 @@ spec:
                 configMapKeyRef:
                   name: "redis"
                   key: redis_port
+            - name: GCS_EXAMPLE_BUCKET_NAME
+              value: "infra-prod-example"
           ports:
             - name: polarstomps
               containerPort: 8080
