@@ -19,6 +19,9 @@ spec:
         - name: polarstomps
           image: howdoicomputer/polarstomps:v21
           imagePullPolicy: IfNotPresent
+          template:
+            spec:
+              serviceAccountName: polarstomps
           env:
             - name: REDIS_AUTH
               valueFrom:
