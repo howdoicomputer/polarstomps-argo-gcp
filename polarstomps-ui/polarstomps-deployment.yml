@@ -16,7 +16,6 @@ spec:
       serviceAccountName: polarstomps
       nodeSelector:
         cloud.google.com/gke-accelerator: nvidia-tesla-a100
-        cloud.google.com/gke-accelerator-count: "1"
       containers:
         - name: polarstomps
           image: howdoicomputer/polarstomps:v22
@@ -51,6 +50,6 @@ spec:
             limits:
               nvidia.com/gpu: 1
             requests:
-              cpu: "250m"
-              memory: "1Gi"
+              cpu: 250m
+              memory: 1Gi
               ephemeral-storage: 10Mi
