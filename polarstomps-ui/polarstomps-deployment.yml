@@ -14,6 +14,8 @@ spec:
         app: polarstomps
     spec:
       serviceAccountName: polarstomps
+      nodeSelector:
+        cloud.google.com/compute-class: "Scale-Out"
       containers:
         - name: polarstomps
           image: howdoicomputer/polarstomps:v22
