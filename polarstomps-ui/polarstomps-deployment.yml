@@ -16,6 +16,8 @@ spec:
       serviceAccountName: polarstomps
       nodeSelector:
         cloud.google.com/compute-class: "Scale-Out"
+        cloud.google.com/gke-accelerator: "nvidia-l4"
+        cloud.google.com/gke-accelerator-count: 1
       containers:
         - name: polarstomps
           image: howdoicomputer/polarstomps:v22
@@ -47,6 +49,9 @@ spec:
               containerPort: 9090
               protocol: TCP
           resources:
+            limits:
+              nvidia.com/gpu: 1
             requests:
               cpu: "250m"
               memory: "1Gi"
+              ephemeral-storage: 10Mi
