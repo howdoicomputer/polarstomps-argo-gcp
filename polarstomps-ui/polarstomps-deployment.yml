@@ -14,8 +14,6 @@ spec:
         app: polarstomps
     spec:
       serviceAccountName: polarstomps
-      nodeSelector:
-        cloud.google.com/gke-accelerator: nvidia-tesla-a100
       containers:
         - name: polarstomps
           image: howdoicomputer/polarstomps:v22
