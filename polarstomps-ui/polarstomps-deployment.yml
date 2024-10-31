@@ -15,8 +15,7 @@ spec:
     spec:
       serviceAccountName: polarstomps
       nodeSelector:
-        cloud.google.com/compute-class: "Accelerator"
-        cloud.google.com/gke-accelerator: "nvidia-tesla-t4"
+        cloud.google.com/gke-accelerator: nvidia-tesla-a100
         cloud.google.com/gke-accelerator-count: "1"
       containers:
         - name: polarstomps
