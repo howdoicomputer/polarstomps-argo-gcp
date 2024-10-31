@@ -15,40 +15,40 @@ spec:
     spec:
       nodeSelector:
         cloud.google.com/compute-class: "Scale-Out"
-      containers:
-        - name: polarstomps
-          image: howdoicomputer/polarstomps:v21
-          imagePullPolicy: IfNotPresent
-          template:
-            spec:
-              serviceAccountName: polarstomps
-          env:
-            - name: REDIS_AUTH
-              valueFrom:
-                secretKeyRef:
-                  name: redis-auth
-                  key: auth
-            - name: REDIS_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: "redis"
-                  key: redis_host
-            - name: REDIS_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: "redis"
-                  key: redis_port
-            - name: GCS_EXAMPLE_BUCKET_NAME
-              value: "infra-prod-example"
-          ports:
+      template:
+        spec:
+          serviceAccountName: polarstomps
+          containers:
             - name: polarstomps
-              containerPort: 8080
-              protocol: TCP
-          ports:
-            - name: monitoring
-              containerPort: 9090
-              protocol: TCP
-          resources:
-            requests:
-              cpu: "250m"
-              memory: "1Gi"
+              image: howdoicomputer/polarstomps:v21
+              imagePullPolicy: IfNotPresent
+              env:
+                - name: REDIS_AUTH
+                  valueFrom:
+                    secretKeyRef:
+                      name: redis-auth
+                      key: auth
+                - name: REDIS_HOST
+                  valueFrom:
+                    configMapKeyRef:
+                      name: "redis"
+                      key: redis_host
+                - name: REDIS_PORT
+                  valueFrom:
+                    configMapKeyRef:
+                      name: "redis"
+                      key: redis_port
+                - name: GCS_EXAMPLE_BUCKET_NAME
+                  value: "infra-prod-example"
+              ports:
+                - name: polarstomps
+                  containerPort: 8080
+                  protocol: TCP
+              ports:
+                - name: monitoring
+                  containerPort: 9090
+                  protocol: TCP
+              resources:
+                requests:
+                  cpu: "250m"
+                  memory: "1Gi"
