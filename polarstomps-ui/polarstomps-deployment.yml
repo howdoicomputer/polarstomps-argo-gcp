@@ -17,7 +17,7 @@ spec:
         cloud.google.com/compute-class: "Scale-Out"
       containers:
         - name: polarstomps
-          image: howdoicomputer/polarstomps:v20
+          image: howdoicomputer/polarstomps:v21
           imagePullPolicy: IfNotPresent
           env:
             - name: REDIS_AUTH
