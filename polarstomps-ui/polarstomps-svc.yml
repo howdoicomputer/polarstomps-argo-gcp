@@ -6,7 +6,6 @@ metadata:
   annotations:
     beta.cloud.google.com/backend-config: '{"default": "polarstomps"}'
 spec:
-  serviceAccountName: polarstomps
   type: NodePort
   ports:
     - name: polarstomps
