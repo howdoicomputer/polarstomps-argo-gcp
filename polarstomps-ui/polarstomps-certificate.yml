@@ -4,4 +4,4 @@ metadata:
   name: infra-prod-polarstomps-cert
 spec:
   domains:
-    - a-bridge.app
+    - polarstomps-com
